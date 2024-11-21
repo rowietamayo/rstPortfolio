@@ -1,0 +1,667 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@font-face {
+  font-family: "Agatho_Regular";
+  src: url("/font/Agatho_Regular.otf");
+}
+
+body {
+  font-family: Arial, sans-serif, "Agatho_Regular";
+  background-color: #fffeef;
+  overflow-x: hidden;
+}
+
+#profile {
+  height: 350px;
+}
+
+.icon {
+  height: 30px;
+}
+
+#logo {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
+
+#bracket {
+  width: 30px;
+}
+
+.tagcontainer {
+  min-height: 100vh;
+}
+
+#tag {
+  font-family: "Agatho_Regular";
+  font-size: 200px;
+  color: #f20e0e;
+  text-align: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #007bff;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #fddbdb;
+}
+
+.nav-link:active {
+  transform: scale(0.95);
+  background-color: #faa3a3;
+}
+#nav-text {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  align-items: center;
+  appearance: none;
+  background-color: #fff3f0;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #f20e0e;
+  box-shadow: rgba(228, 61, 18, 0.2) 0 2px 4px,
+    rgba(228, 61, 18, 0.4) 0 7px 13px -3px, rgba(0, 0, 0, 0.1) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #f20e0e;
+  cursor: pointer;
+  display: inline-flex;
+  height: 56px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 24px;
+  padding-right: 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 15px;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(228, 61, 18, 0.4) 0 2px 4px,
+    rgba(228, 61, 18, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.btn:hover {
+  box-shadow: rgba(228, 61, 18, 0.3) 0 4px 8px,
+    rgba(228, 61, 18, 0.2) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+#about {
+  background-color: #f20e0e;
+  color: #fffeef;
+  margin: 0;
+}
+
+#profile {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+#vision {
+  font-family: "Agatho_Regular";
+  font-size: 50px;
+}
+
+#period {
+  font-weight: bold;
+  -webkit-animation: colorchange 2s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: #418dcd;
+  }
+
+  10% {
+    color: #418dcd;
+  }
+
+  20% {
+    color: #418dcd;
+  }
+
+  30% {
+    color: #418dcd;
+  }
+
+  40% {
+    color: #03965b;
+  }
+
+  50% {
+    color: #03965b;
+  }
+
+  60% {
+    color: #545c5e;
+  }
+
+  70% {
+    color: #545c5e;
+  }
+  80% {
+    color: #03965b;
+  }
+
+  90% {
+    color: #03965b;
+  }
+
+  100% {
+    color: #418dcd;
+  }
+}
+
+#action {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #f20e0e;
+}
+
+#goals {
+  color: #fffeef;
+  font-family: "Agatho_Regular";
+  padding-top: 30px;
+  font-size: 25px;
+  line-height: 0.9;
+}
+
+#service-image {
+  width: auto;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.image-container {
+  position: relative;
+  width: auto;
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fffeef;
+  width: 100%;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container:hover #service-image {
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.proj-container {
+  position: relative;
+  width: auto;
+}
+
+.proj {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s ease-out;
+}
+
+.headerVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section {
+  padding: 100px 100px 100px 100px;
+  margin: 0;
+}
+
+#feat-title {
+  font-family: "Agatho_Regular";
+  font-size: 50px;
+}
+
+#details {
+  font-family: "Agatho_Regular";
+  font-size: 30px;
+}
+
+.details-text {
+  display: inline;
+  transition: color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.details-text:hover {
+  color: #545c5e;
+}
+
+#contacts {
+  background-color: #f20e0e;
+  color: #fffeef;
+  padding: 30px 0;
+}
+
+h1 {
+  font-family: "Agatho_Regular";
+  font-size: 50px;
+}
+
+#form {
+  background-color: #fffeef;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.border-3 {
+  background-color: #fff3f0;
+}
+
+#send {
+  width: 35px;
+}
+
+.check {
+  width: 50px;
+}
+
+/* profile css */
+
+#emoji {
+  width: 40px;
+}
+
+#link {
+  width: 30px;
+}
+.btn-sm {
+  padding: 8px 17px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-sm:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  border-color: #38b1e7;
+}
+
+.link {
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+
+.link svg {
+  margin-right: 8px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#footer {
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+#pic {
+  height: 250px;
+  width: 250px;
+  margin-top: -120px;
+  border: 4px solid #f20e0e;
+}
+
+#cover {
+  width: 100%;
+  height: 40vh;
+  background: url(./images/bg.jpg) no-repeat center / cover;
+}
+
+.card-body {
+  background-color: #fffeef;
+}
+#spin {
+  font-family: "Agatho_Regular";
+  font-size: 40px;
+}
+#spin:after {
+  content: "";
+  animation: spin 10s linear infinite;
+  color: #f20e0e;
+}
+@keyframes spin {
+  0% {
+    content: "Hello";
+  }
+  20% {
+    content: "Hola";
+  }
+
+  30% {
+    content: "Anyeong Haseyo";
+  }
+  40% {
+    content: "Bonjour";
+  }
+  50% {
+    content: "Mabuhay";
+  }
+  60% {
+    content: "Salve";
+  }
+  80% {
+    content: "Guten Tag";
+  }
+  100% {
+    content: "Konnichiwa";
+  }
+}
+
+#hand {
+  width: 38px;
+}
+
+.name {
+  font-size: 38px;
+  font-family: "Agatho_Regular";
+}
+
+.fst-italic {
+  font-size: 35px;
+}
+
+.intro {
+  font-size: 45px;
+  font-family: "Agatho_Regular";
+  text-wrap: balance;
+}
+
+#footer-link {
+  color: #545c5e;
+}
+
+#footer-link:hover {
+  color: #f20e0e;
+}
+
+#card-color {
+  background-color: #f20e0e;
+}
+
+.fs-5 {
+  font-family: "Agatho_Regular";
+}
+
+#tools-logo {
+  width: 50px;
+}
+
+#card-image {
+  background-color: #fff6ef;
+}
+.card-title {
+  font-size: 28px;
+  font-family: "Agatho_Regular";
+}
+
+#long-text {
+  text-wrap: wrap;
+}
+
+.line {
+  border-top: #f20e0e 2px dotted;
+}
+
+#tech {
+  font-family: "Agatho_Regular";
+  font-size: 50px;
+  color: #f20e0e;
+}
+
+#stack {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #fffeef;
+}
+
+#tools-spacing {
+  padding: 50px 100px 100px 100px;
+  margin: 0;
+}
+/* media queries */
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  #tag,
+  #spin,
+  .name {
+    font-size: 2.5em;
+  }
+  .fst-italic {
+    font-size: 2.2em;
+  }
+  .btn {
+    height: 40px;
+    font-size: 13px;
+  }
+  #vision,
+  #tech {
+    font-size: 2.5em;
+  }
+
+  #goals {
+    font-size: 23px;
+  }
+  .overlay {
+    font-size: 16px;
+  }
+  .icon {
+    height: 28px;
+  }
+  #nav-text {
+    font-size: 13px;
+  }
+  #pic {
+    height: 200px;
+    width: 200px;
+  }
+  #hand {
+    width: 36px;
+  }
+
+  .intro {
+    font-size: 34px;
+  }
+  #tools-logo {
+    width: 40px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1199px) {
+  #tag {
+    font-size: 3.5em;
+  }
+  #pic {
+    height: 230px;
+    width: 230px;
+  }
+
+  #spin {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 1024px) {
+  #tag {
+    font-size: 5em;
+  }
+}
+
+@media (max-width: 632px) {
+  #tag,
+  #spin {
+    font-size: 2em;
+  }
+  .btn {
+    height: 30px;
+    font-size: 10px;
+  }
+  #vision,
+  #tech {
+    font-size: 2em;
+  }
+
+  #goals {
+    font-size: 20px;
+  }
+  .overlay {
+    font-size: 14px;
+  }
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1020;
+  }
+  .icon {
+    height: 24px;
+  }
+  #nav-text {
+    font-size: 11px;
+  }
+
+  #feat-title {
+    font-size: 2em;
+  }
+
+  #details {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input::placeholder,
+  textarea::placeholder,
+  #message {
+    font-size: 12px;
+  }
+
+  #inputname {
+    font-size: 12px;
+  }
+
+  #inputemail {
+    font-size: 12px;
+  }
+
+  #inputtext {
+    font-size: 12px;
+  }
+
+  h5 {
+    font-size: 15px;
+  }
+
+  #send {
+    width: 28px;
+  }
+
+  #pic {
+    height: 180px;
+    width: 180px;
+  }
+
+  #hand {
+    width: 30px;
+  }
+
+  .name {
+    font-size: 25px;
+  }
+  .fst-italic {
+    font-size: 22px;
+  }
+
+  .btn-sm {
+    padding: 5px 10px;
+  }
+
+  .link {
+    font-size: 11px;
+  }
+
+  .intro {
+    font-size: 25px;
+  }
+
+  #tools-logo {
+    width: 30px;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  #tabs {
+    font-size: 13px;
+  }
+}
