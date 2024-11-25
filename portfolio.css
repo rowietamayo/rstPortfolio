@@ -719,7 +719,11 @@ h1 {
     margin: 0;
   }
 
+  .name-greetings {
+    justify-content: center;
+  }
+
   .fst-italic {
-    font-size: 21px;
+    font-size: 19px;
   }
 }
