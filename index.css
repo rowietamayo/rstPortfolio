@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Kaushan+Script&family=Lobster&family=Major+Mono+Display&family=Ranchers&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #ebe9e1;
@@ -22,6 +28,7 @@ body {
   background-color: #faff66;
   border-radius: 100%;
 }
+
 .text {
   font-size: 1.5em;
   letter-spacing: 3px;
@@ -57,5 +64,12 @@ body {
   }
   100% {
     font-family: "Major Mono Display", monospace;
+  }
+}
+
+@media (max-width: 632px) {
+  .text {
+    font-size: 1.1em;
+    letter-spacing: 1px;
   }
 }

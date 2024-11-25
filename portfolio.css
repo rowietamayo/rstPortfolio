@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -9,14 +9,12 @@
   src: url("/font/Agatho_Regular.otf");
 }
 
+html,
 body {
   font-family: Arial, sans-serif, "Agatho_Regular";
   background-color: #fffeef;
   overflow-x: hidden;
-}
-
-#profile {
-  height: 350px;
+  width: 100%;
 }
 
 .icon {
@@ -32,10 +30,6 @@ body {
 
 #bracket {
   width: 30px;
-}
-
-.tagcontainer {
-  min-height: 100vh;
 }
 
 #tag {
@@ -236,6 +230,10 @@ body {
   opacity: 1;
 }
 
+#projects {
+  padding: 100px 50px 100px 50px;
+}
+
 .proj-container {
   position: relative;
   width: auto;
@@ -258,7 +256,8 @@ body {
 }
 
 section {
-  padding: 100px 100px 100px 100px;
+  padding: 100px;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -286,7 +285,11 @@ section {
 #contacts {
   background-color: #f20e0e;
   color: #fffeef;
-  padding: 30px 0;
+  padding: 100px;
+}
+
+#contact-form {
+  padding: 0;
 }
 
 h1 {
@@ -482,6 +485,14 @@ h1 {
   padding: 50px 100px 100px 100px;
   margin: 0;
 }
+
+#btn-socials {
+  text-wrap: pretty;
+}
+
+#name2 {
+  color: #f20e0e;
+}
 /* media queries */
 
 @media (min-width: 600px) and (max-width: 1024px) {
@@ -542,6 +553,10 @@ h1 {
   #spin {
     font-size: 3em;
   }
+
+  #cover {
+    height: 30vh;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -552,16 +567,14 @@ h1 {
 
 @media (max-width: 632px) {
   #tag,
-  #spin {
+  #spin,
+  #vision,
+  #tech {
     font-size: 2em;
   }
   .btn {
     height: 30px;
     font-size: 10px;
-  }
-  #vision,
-  #tech {
-    font-size: 2em;
   }
 
   #goals {
@@ -643,6 +656,7 @@ h1 {
 
   .btn-sm {
     padding: 5px 10px;
+    width: 80px;
   }
 
   .link {
@@ -663,5 +677,28 @@ h1 {
 
   #tabs {
     font-size: 13px;
+  }
+
+  section {
+    padding: 20px;
+    margin: 0;
+  }
+
+  #projects {
+    padding: 20px;
+  }
+
+  #contacts {
+    padding: 20px 0 100px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .link {
+    font-size: 9px;
+  }
+  #tools-spacing {
+    padding: 20px 15px 100px 15px;
+    margin: 0;
   }
 }
