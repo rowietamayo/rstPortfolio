@@ -1,11 +1,3 @@
-function showLoadingAndRedirect(targetPage) {
-  window.location.href = "index.html"
-
-  setTimeout(() => {
-    window.location.href = targetPage
-  }, 2000)
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   const homeNav = document.querySelector("#home-nav")
   if (homeNav) {
