@@ -577,6 +577,11 @@ h1 {
   #tech {
     font-size: 2em;
   }
+
+  #tag {
+    min-height: 20vh;
+  }
+
   .btn {
     height: 30px;
     font-size: 10px;
