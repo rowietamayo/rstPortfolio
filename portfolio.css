@@ -286,6 +286,11 @@ section {
   background-color: #f20e0e;
   color: #fffeef;
   padding: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #contact-form {
