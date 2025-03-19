@@ -669,6 +669,7 @@ h1 {
 
   .fst-italic {
     font-size: 22px;
+    vertical-align: baseline;
   }
 
   .btn-sm {
