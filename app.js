@@ -46,8 +46,8 @@ if (window.addEventListener) {
 }
 
 document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
+  .getElementById("contact-form")
+  ?.addEventListener("submit", function (event) {
     const form = event.target
     const spinner = document.getElementById("spinner")
     const sendImage = document.getElementById("send")
