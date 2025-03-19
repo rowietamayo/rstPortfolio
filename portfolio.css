@@ -423,14 +423,13 @@ h1 {
   width: 38px;
 }
 
+.par {
+  width: 25px;
+}
+
 .name {
   font-size: 38px;
   font-family: "Agatho_Regular";
-}
-
-.fst-italic {
-  font-size: 25px;
-  vertical-align: baseline;
 }
 
 .intro {
@@ -656,19 +655,8 @@ h1 {
     width: 30px;
   }
 
-  .name-greetings {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .name {
     font-size: 25px;
-  }
-
-  .fst-italic {
-    font-size: 20px;
-    vertical-align: baseline;
   }
 
   .btn-sm {
@@ -717,14 +705,5 @@ h1 {
   #tools-spacing {
     padding: 20px 15px 100px 15px;
     margin: 0;
-  }
-
-  .name-greetings {
-    justify-content: center;
-  }
-
-  .fst-italic {
-    font-size: 13px;
-    vertical-align: baseline;
   }
 }

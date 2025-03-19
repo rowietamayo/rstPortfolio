@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hello World, I'm Rowie. Welcome to my portfolio! Discover my creative projects, skills in web development and design, and passion for delivering innovative solutions."
+    />
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -225,21 +229,20 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"
-                    >Name</label
-                  >
+                  <label for="inputname" class="form-label">Name</label>
                   <input
                     type="text"
                     name="fullname"
                     class="form-control border-3 border-danger required"
                     placeholder="What should I call you?"
                     id="inputname"
+                    autocomplete="given-name"
                     required
                   />
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
+                  <label for="inputemail" class="form-label"
                     >Email address</label
                   >
                   <input
@@ -248,14 +251,13 @@
                     class="form-control border-3 border-danger"
                     id="inputemail"
                     placeholder="name@example.com"
+                    autocomplete="email"
                     required
                   />
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"
-                    >Message</label
-                  >
+                  <label for="inputtext" class="form-label">Message</label>
                   <textarea
                     class="form-control border-3 border-danger"
                     name="message"
