@@ -3,9 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="2; url=portfolio.html" />
+    <meta http-equiv="refresh" content="2; url=/pages/portfolio.html" />
     <title>Rowimay Tamayo</title>
-    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Cormorant+Garamond:wght@300;600&family=Inter:wght@400;600&family=Kaushan+Script&family=Lobster&family=Major+Mono+Display&family=Ranchers&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Cormorant Garamond', serif;
+        background-color: #ebe9e1;
+        overflow-y: hidden;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      .changetext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #BC9C22; /* Burnished Gold */
+        border-radius: 100%;
+        padding: 20px;
+      }
+
+      .text {
+        font-size: 1.5em;
+        letter-spacing: 6px;
+        font-family: 'Cormorant Garamond', serif;
+        white-space: nowrap;
+        animation-name: fontChange;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        color: #151B22; /* Midnight Slate */
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .portfolio {
+        font-size: 1em;
+        font-weight: 400;
+        margin-left: 20px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #BC9C22;
+        font-family: 'Inter', sans-serif;
+      }
+
+      @keyframes fontChange {
+        0% {
+          font-family: "Major Mono Display", monospace;
+        }
+        20% {
+          font-family: "Kaushan Script", cursive;
+        }
+        40% {
+          font-family: "Lobster", cursive;
+        }
+        60% {
+          font-family: "Ranchers", cursive;
+        }
+        80% {
+          font-family: "Bitter", serif;
+        }
+        100% {
+          font-family: "Major Mono Display", monospace;
+        }
+      }
+
+      @media (max-width: 632px) {
+        .text {
+          font-size: 1.1em;
+          letter-spacing: 1px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
