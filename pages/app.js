@@ -1,8 +1,9 @@
-const SUPABASE_BUCKET_URL = "https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/"
+const SUPABASE_BUCKET_URL =
+  "https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/"
 
 function showLoadingAndRedirect(url) {
   // Simple redirect if no specific loading UI is defined yet
-  window.location.href = url;
+  window.location.href = url
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -25,23 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // Refactor scroll animations to use IntersectionObserver
   const observerOptions = {
     root: null,
-    threshold: 0.1
-  };
+    threshold: 0.1,
+  }
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("headerVisible");
+        entry.target.classList.add("headerVisible")
       } else {
-        entry.target.classList.remove("headerVisible");
+        entry.target.classList.remove("headerVisible")
       }
-    });
-  }, observerOptions);
+    })
+  }, observerOptions)
 
-  document.querySelectorAll(".header").forEach(header => {
-    observer.observe(header);
-  });
-});
+  document.querySelectorAll(".header").forEach((header) => {
+    observer.observe(header)
+  })
+})
 
 document
   .getElementById("contact-form")
@@ -147,15 +148,22 @@ document.addEventListener("DOMContentLoaded", () => {
 // project list
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const projects = [
-    { src: "profile.mp4", alt: "profile", link: "https://rowimaytamayo.com"},
-    { src: "OHARA.svg", alt: "ohara" },
+    { src: "profile.mp4", alt: "profile", link: "https://rowimaytamayo.com" },
+    { src: "ohara.mp4", alt: "ohara", link: "https://ohara.rowimaytamayo.com" },
     { src: "SCRBBLES.svg", alt: "scribbles" },
-    { src: "tab.mp4", alt: "allblue", link: "https://allblue.rowimaytamayo.com"},
+    {
+      src: "tab.mp4",
+      alt: "allblue",
+      link: "https://allblue.rowimaytamayo.com",
+    },
     { src: "movie.svg", alt: "movie" },
-    { src: "goingmarry.mp4", alt: "goingmarry", link: "https://goingmarry.rowimaytamayo.com" },
-    { src: "hq.svg", alt: "hq" }
+    {
+      src: "goingmarry.mp4",
+      alt: "goingmarry",
+      link: "https://goingmarry.rowimaytamayo.com",
+    },
+    { src: "hq.svg", alt: "hq" },
   ]
 
   const projectContainer = document.getElementById("project-list")
@@ -171,8 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ? `<video src="${SUPABASE_BUCKET_URL}${project.src}${cacheBuster}" class="proj img-fluid" loop muted playsinline></video>`
         : `<img src="${SUPABASE_BUCKET_URL}${project.src}${cacheBuster}" alt="${project.alt}" class="proj img-fluid" loading="lazy" fetchpriority="high" />`
 
-      const linkStart = project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer">` : ''
-      const linkEnd = project.link ? `</a>` : ''
+      const linkStart = project.link
+        ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer">`
+        : ""
+      const linkEnd = project.link ? `</a>` : ""
 
       col.innerHTML = `
         <div class="proj-container">
@@ -199,12 +209,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         container.addEventListener("mouseleave", () => {
           if (playPromise !== undefined) {
-            playPromise.then(() => {
-              videoElement.pause()
-              videoElement.currentTime = 0.5 // Reset to the beautiful preview frame
-            }).catch(() => {
-              // Safely ignore fast mouseenter/mouseleave interruptions
-            })
+            playPromise
+              .then(() => {
+                videoElement.pause()
+                videoElement.currentTime = 0.5 // Reset to the beautiful preview frame
+              })
+              .catch(() => {
+                // Safely ignore fast mouseenter/mouseleave interruptions
+              })
           } else {
             videoElement.pause()
             videoElement.currentTime = 0.5
