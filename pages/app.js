@@ -1,27 +1,86 @@
 const SUPABASE_BUCKET_URL =
   "https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/"
 
-function showLoadingAndRedirect(url) {
-  // Simple redirect if no specific loading UI is defined yet
-  window.location.href = url
+// Dynamic injection of the transition overlay
+const overlay = document.createElement("div")
+overlay.id = "page-transition-overlay"
+overlay.className = "transition-overlay"
+overlay.innerHTML = `<div class="transition-dot"></div>`
+
+if (document.body) {
+  document.body.prepend(overlay)
+} else {
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.prepend(overlay)
+  })
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const homeNav = document.querySelector("#home-nav")
-  if (homeNav) {
-    homeNav.addEventListener("click", function (event) {
-      event.preventDefault()
-      showLoadingAndRedirect("portfolio.html")
-    })
-  }
+// Slide the curtain up once the page has fully loaded
+window.addEventListener("load", function () {
+  // Small delay so the dot is briefly visible before the curtain lifts
+  setTimeout(() => {
+    overlay.classList.add("slide-out")
+  }, 200)
+})
 
-  const profileNav = document.querySelector("#profile-nav")
-  if (profileNav) {
-    profileNav.addEventListener("click", function (event) {
-      event.preventDefault()
-      showLoadingAndRedirect("profile.html")
-    })
+// Safe fallback: slide out the overlay if the page takes too long to load
+setTimeout(() => {
+  if (!overlay.classList.contains("slide-out")) {
+    overlay.classList.add("slide-out")
   }
+}, 2000)
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Page Transition Event Interception
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a")
+    if (!link) return
+
+    const href = link.getAttribute("href")
+    if (!href) return
+
+    // Skip target="_blank", non-http links, and same-page anchor hashes
+    if (
+      link.target === "_blank" ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("javascript:") ||
+      href.startsWith("#")
+    ) {
+      return
+    }
+
+    try {
+      // Resolve absolute URL
+      const targetUrl = new URL(href, window.location.href)
+      
+      // Only transition internal links of the same origin
+      if (targetUrl.origin !== window.location.origin) {
+        return
+      }
+
+      // Compare just the filename (last segment of the path)
+      const currentFile = window.location.pathname.split("/").pop()
+      const targetFile = targetUrl.pathname.split("/").pop()
+
+      // If navigating to a different page file, trigger the curtain transition
+      if (currentFile !== targetFile) {
+        event.preventDefault()
+        
+        // Reset: remove slide-out so overlay is back at translateY(0)
+        overlay.classList.remove("slide-out")
+        // Force a reflow so the browser registers the position reset
+        void overlay.offsetHeight
+        // The overlay is now visible at translateY(0), covering the page
+        
+        setTimeout(() => {
+          window.location.href = href
+        }, 500) // matches CSS transition duration (0.5s)
+      }
+    } catch (e) {
+      // Fallback: let standard navigation occur if URL parsing fails
+    }
+  })
 
   // Refactor scroll animations to use IntersectionObserver
   const observerOptions = {

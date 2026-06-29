@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,21 +7,55 @@
       name="description"
       content="Hello World, I'm Rowie. Welcome to my portfolio! Discover my creative projects, skills in web development and design, and passion for delivering innovative solutions."
     />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    />
+    <!-- Preconnect to external origins for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Fonts -->
+    <!-- Bootstrap CSS (non-render-blocking) -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;400;600;900&display=swap"
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Google Fonts (non-render-blocking) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;600&family=Montserrat+Alternates:wght@100;300;400;600;900&family=Playfair+Display:wght@400;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;600&family=Montserrat+Alternates:wght@100;300;400;600;900&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Preload custom font -->
+    <link
+      rel="preload"
+      href="../font/Agatho_Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="portfolio.css" />
-    <link rel="icon" href="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/hamburger.svg" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/hamburger.svg"
+      type="image/x-icon"
+    />
     <title>Rowimay Tamayo</title>
   </head>
   <body>
@@ -39,7 +73,7 @@
             src="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/rowimaytamayo.jpg"
             id="pic"
             class="rounded-circle"
-            style="width: 100%; aspect-ratio: 1/1; object-fit: cover;"
+            style="width: 100%; aspect-ratio: 1/1; object-fit: cover"
             alt="Portrait of Rowimay Tamayo"
           />
         </div>
@@ -58,8 +92,10 @@
           class="d-flex justify-content-center align-items-center mb-0 pb-0 name"
         >
           <span class="mb-0 pb-0">I am, Rowimay</span>
-          <span class="mb-0 pb-0 fst-italic fs-4 fs-md-4 ms-2">&lpar; rowimeɪ &rpar;</span>
-          <span class="period"> &period;</span>
+          <span class="mb-0 pb-0 fst-italic fs-4 fs-md-4 ms-2"
+            >&lpar; rowimeɪ &rpar;</span
+          >
+          <span> &period;</span>
         </h1>
 
         <div class="fs-5 text-center mt-0">
@@ -118,7 +154,11 @@
           </div>
           <div class="card m-0 p-0 border-0">
             <div class="card-body m-0 p-1 p-md-2">
-              <a href="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/resume.pdf" download class="link">
+              <a
+                href="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/resume.pdf"
+                download
+                class="link"
+              >
                 <img
                   src="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/download.svg"
                   alt="download-logo"
@@ -166,9 +206,7 @@
                 <blockquote class="blockquote">
                   <p class="intro">
                     Specializing in building scalable web applications and
-                    turning your ideas into projects<span class="period">
-                      &period;</span
-                    >
+                    turning your ideas into projects<span> &period;</span>
                   </p>
                   <div
                     class="text-center text-center pe-md-3"
@@ -196,7 +234,7 @@
         <div id="techtools">
           <h1 id="tech" class="text-center text-uppercase pb-2 text-wrap">
             Tech
-            <span id="stack">Stack</span><span class="period"> &period;</span>
+            <span id="stack">Stack</span><span> &period;</span>
           </h1>
         </div>
         <nav class="fw-bold" id="tabs">
@@ -406,7 +444,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -495,7 +533,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -541,7 +579,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -989,7 +1027,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -1052,7 +1090,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1097,7 +1135,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1153,7 +1191,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1205,7 +1243,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1271,7 +1309,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1398,7 +1436,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1447,7 +1485,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1509,7 +1547,7 @@
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1553,7 +1591,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1608,7 +1646,7 @@
                         preserveAspectRatio="xMidYMid"
                         fill="#000000"
                         class="img-fluid justify-content-center tools-logo"
-                         alt="tech stack icon"
+                        alt="tech stack icon"
                       >
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g
@@ -1672,37 +1710,24 @@
       <!-- Tools end -->
 
       <!-- Footer start -->
-      <footer class="footer py-4" style="background-color: #151B22; color: #fffeef;">
-        <p class="text-center m-0 opacity-75">&copy; 2024 | Rowimay Tamayo Portfolio</p>
+      <footer
+        class="footer py-4"
+        style="background-color: #151b22; color: #fffeef"
+      >
+        <p class="text-center m-0 opacity-75">
+          &copy; 2024 | Rowimay Tamayo Portfolio
+        </p>
       </footer>
       <!-- Footer end -->
     </main>
 
+    <!-- Bootstrap js -->
     <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
       defer
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script>
-      fetch("nav.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data
-        })
-    </script>
     <script src="app.js" defer></script>
   </body>
 </html>

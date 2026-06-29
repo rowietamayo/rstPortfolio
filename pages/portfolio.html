@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,28 +7,55 @@
       name="description"
       content="Hello World, I'm Rowie. Welcome to my portfolio! Discover my creative projects, skills in web development and design, and passion for delivering innovative solutions."
     />
-    <!-- Bootstrap CSS -->
+    <!-- Preconnect to external origins for faster loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Bootstrap CSS (non-render-blocking) -->
     <link
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+    </noscript>
 
+    <!-- Google Fonts (non-render-blocking) -->
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;600&family=Montserrat+Alternates:wght@100;300;400;600;900&family=Playfair+Display:wght@400;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;600&family=Montserrat+Alternates:wght@100;300;400;600;900&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
-    <!-- <link
+    <!-- Preload custom font -->
+    <link
       rel="preload"
       href="../font/Agatho_Regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin
-    /> -->
+    />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="portfolio.css" />
-    <link rel="icon" href="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/hamburger.svg" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/hamburger.svg"
+      type="image/x-icon"
+    />
 
     <!-- Loading page -->
 
@@ -48,7 +75,7 @@
         <div class="text-center">
           <h1 id="tag" class="header">
             Expertly crafted websites, <br />tailored to your vision
-            <span class="period">&period;</span>
+            <span>&period;</span>
           </h1>
         </div>
       </section>
@@ -62,8 +89,7 @@
             <div class="col-md-7 col-12">
               <h2 id="vision" class="text-start text-uppercase">
                 Let&apos;s make your ideas into
-                <span id="action"><br />action </span
-                ><span class="period">&period;</span>
+                <span id="action"><br />action </span><span>&period;</span>
               </h2>
             </div>
             <div class="col-md-5 col-12">
@@ -94,7 +120,7 @@
       <div id="contacts">
         <h5 class="header text-center">
           Want to work together&quest; <br />I&apos;d love to hear from you
-          <span class="period">&period;</span>
+          <span>&period;</span>
         </h5>
 
         <div class="container-fluid" id="contact-form">
@@ -215,27 +241,36 @@
       </div>
       <!-- Contact end -->
 
-      <footer class="footer py-5" style="background-color: #151B22; color: #fffeef;">
+      <footer
+        class="footer py-5"
+        style="background-color: #151b22; color: #fffeef"
+      >
         <div class="socials d-flex justify-content-center gap-4 fs-4 mb-3">
           <a href="https://www.linkedin.com/in/rowimay-tamayo/" target="_blank">
             <img
               src="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/linkedin.svg"
               alt="LinkedIn"
-              style="filter: brightness(0) invert(1);"
+              style="filter: brightness(0) invert(1)"
             />
           </a>
           <a href="https://github.com/rowietamayo/" target="_blank">
-            <img src="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/github.svg" alt="GitHub" style="filter: brightness(0) invert(1);" />
+            <img
+              src="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/github.svg"
+              alt="GitHub"
+              style="filter: brightness(0) invert(1)"
+            />
           </a>
           <a href="https://www.instagram.com/rowieoh/" target="_blank">
             <img
               src="https://jkpenfuvjsikletzganq.supabase.co/storage/v1/object/public/portfolio-assets/instagram.svg"
               alt="Instagram"
-              style="filter: brightness(0) invert(1);"
+              style="filter: brightness(0) invert(1)"
             />
           </a>
         </div>
-        <p class="text-center m-0 opacity-75">&copy; 2024 | Rowimay Tamayo Portfolio</p>
+        <p class="text-center m-0 opacity-75">
+          &copy; 2024 | Rowimay Tamayo Portfolio
+        </p>
       </footer>
 
       <!-- Bootstrap js -->
