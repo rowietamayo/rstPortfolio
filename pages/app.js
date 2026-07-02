@@ -301,13 +301,13 @@ const techStacks = {
 
   frontEnd: [
     { name: "React", img: "react.svg" },
-    { name: "Next.js", img: "nextjs.svg" },
+    { name: "Next.js", img: "next.svg" },
     { name: "Bootstrap", img: "bootstrap.svg" },
     { name: "Tailwind", img: "tailwind.svg" },
   ],
 
   backEnd: [
-    { name: "Node.js", img: "nodejs.svg" },
+    { name: "Node.js", img: "node-js.svg" },
     { name: "Express.js", img: "expressjs.svg" },
     { name: "Django", img: "django.svg" },
     { name: "Laravel", img: "laravel.svg" },
@@ -330,7 +330,7 @@ const techStacks = {
     { name: "Figma", img: "figma.svg" },
     { name: "Vercel", img: "vercel.svg" },
     { name: "Docker", img: "docker.svg" },
-    { name: "Render", img: "render.svg" },
+    { name: "Render", img: "render.jpg" },
     { name: "Mocha", img: "mocha.svg" },
     { name: "Chai", img: "chai.svg" },
   ],
