@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Resolve absolute URL
       const targetUrl = new URL(href, window.location.href)
-      
+
       // Only transition internal links of the same origin
       if (targetUrl.origin !== window.location.origin) {
         return
@@ -66,13 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // If navigating to a different page file, trigger the curtain transition
       if (currentFile !== targetFile) {
         event.preventDefault()
-        
+
         // Reset: remove slide-out so overlay is back at translateY(0)
         overlay.classList.remove("slide-out")
         // Force a reflow so the browser registers the position reset
         void overlay.offsetHeight
         // The overlay is now visible at translateY(0), covering the page
-        
+
         setTimeout(() => {
           window.location.href = href
         }, 500) // matches CSS transition duration (0.5s)
@@ -205,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // project list
-
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     { src: "profile.mp4", alt: "profile", link: "https://rowimaytamayo.com" },
@@ -287,3 +286,130 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
+
+//tech stack list
+const techStacks = {
+  programmingLanguages: [
+    { name: "HTML", img: "html.svg" },
+    { name: "CSS", img: "css.svg" },
+    { name: "JavaScript", img: "javascript.svg" },
+    { name: "Python", img: "python.svg" },
+    { name: "TypeScript", img: "typescript.svg" },
+    { name: "PHP", img: "php.svg" },
+    { name: "SQL", img: "sql.svg" },
+  ],
+
+  frontEnd: [
+    { name: "React", img: "react.svg" },
+    { name: "Next.js", img: "nextjs.svg" },
+    { name: "Bootstrap", img: "bootstrap.svg" },
+    { name: "Tailwind", img: "tailwind.svg" },
+  ],
+
+  backEnd: [
+    { name: "Node.js", img: "nodejs.svg" },
+    { name: "Express.js", img: "expressjs.svg" },
+    { name: "Django", img: "django.svg" },
+    { name: "Laravel", img: "laravel.svg" },
+  ],
+  databaseAndCloud: [
+    { name: "MySQL", img: "mysql.svg" },
+    { name: "PostgreSQL", img: "postgresql.svg" },
+    { name: "MongoDB", img: "mongodb.svg" },
+    { name: "Supabase", img: "supabase.svg" },
+    { name: "Neon", img: "neon.svg" },
+    { name: "AWS", img: "aws.svg" },
+    { name: "Cloudinary", img: "cloudinary.svg" },
+    { name: "ImageKit", img: "imagekit.jpg" },
+  ],
+
+  toolsAndDevOps: [
+    { name: "GitHub", img: "github.svg" },
+    { name: "Git", img: "git.svg" },
+    { name: "VS Code", img: "vscode.svg" },
+    { name: "Figma", img: "figma.svg" },
+    { name: "Vercel", img: "vercel.svg" },
+    { name: "Docker", img: "docker.svg" },
+    { name: "Render", img: "render.svg" },
+    { name: "Mocha", img: "mocha.svg" },
+    { name: "Chai", img: "chai.svg" },
+  ],
+}
+
+function renderTools(category, targetId) {
+  // Render a list of tools into a container element.
+  const container =
+    typeof targetId === "string" ? document.getElementById(targetId) : targetId
+  if (!container) return
+
+  techStacks[category].forEach((tool) => {
+    const imgSrc = SUPABASE_BUCKET_URL + (tool.img || tool.imgSrc || "")
+    const card = `
+      <div class="col-6 col-sm-6 col-md-6 col-lg-4">
+        <div class="card mb-3" style="max-width: 540px">
+          <div class="row g-0">
+            <div class="col-md-4 col-4 d-flex justify-content-center align-items-center card-image">
+              <img src="${imgSrc}" alt="${tool.alt || tool.name + " logo"}" class="img-fluid justify-content-center tools-logo" loading="lazy" />
+            </div>
+            <div class="col-md-8 col-8">
+              <div class="card-body">
+                <p class="card-title text-center text-md-start pt-2">${tool.name}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`
+    container.insertAdjacentHTML("beforeend", card)
+  })
+}
+
+// Render all tech stack categories into either Bootstrap tab panes (if present)
+// or into the single #techStacks element as a fallback.
+window.onload = () => {
+  const languagesPane = document.getElementById("languages")
+
+  if (languagesPane) {
+    const mapping = {
+      languages: "programmingLanguages",
+      frontEnd: "frontEnd",
+      backEnd: "backEnd",
+      databaseAndCloud: "databaseAndCloud",
+      toolsAndDevOps: "toolsAndDevOps",
+    }
+
+    Object.entries(mapping).forEach(([tabKey, categoryKey]) => {
+      const row = document.getElementById(`${tabKey}-stack`)
+      if (!row) return
+      if (!techStacks[categoryKey]) return
+
+      renderTools(categoryKey, row)
+    })
+
+    return
+  }
+
+  // Fallback: render into #techStacks
+  const wrapper = document.getElementById("techStacks")
+  if (!wrapper) return
+
+  Object.entries(techStacks).forEach(([categoryKey, tools]) => {
+    const section = document.createElement("div")
+    section.className = "tech-category container py-3"
+
+    const title = document.createElement("h2")
+    title.className = "h5 text-start text-uppercase"
+    title.textContent = categoryKey
+      .replace(/([A-Z])/g, " $1")
+      .replace(/^./, (c) => c.toUpperCase())
+
+    section.appendChild(title)
+
+    const row = document.createElement("div")
+    row.className = "row"
+
+    section.appendChild(row)
+    wrapper.appendChild(section)
+
+    renderTools(categoryKey, row)
+  })
+}
